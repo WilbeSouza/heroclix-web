@@ -1,160 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
-
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <title>HeroClix Web Arena</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<link rel="stylesheet" href="css/style.css">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-```
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-```
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="assets/sprites/ui/logo.png" alt="HeroClix Logo">
+        </div>
 
-<header class="navbar">
+        <nav>
+            <a href="#">Home</a>
+            <a href="pages/como-jogar.html">Como Jogar</a>
+            <a href="pages/personagens.html">Personagens</a>
+            <a href="#">Contatos</a>
+        </nav>
 
-    <div class="logo">
-        HeroClix Web Arena
-    </div>
+        <div class="login-area">
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Como Jogar</a>
-        <a href="#">Regras</a>
-    </nav>
+            <input type="text" id="usernameInput" placeholder="Usuário">
+            <input type="password" id="passwordInput" placeholder="Senha">
 
-    <div class="login-area">
-        <button id="loginBtn">Entrar</button>
-        <button id="registerBtn">Cadastrar</button>
-    </div>
+            <span id="userDisplay" style="display: none;"></span>
 
-</header>
+            <button id="loginBtn" class="btn-outline">Entrar</button>
+            <button id="registerBtn" class="btn-outline">Cadastrar</button>
 
-<!-- HERO / APRESENTAÇÃO -->
+        </div>
+    </header>
 
-<section class="hero">
+    <!-- HERO / APRESENTAÇÃO -->
+    <section class="hero">
+        <!-- LOGO + BOTÃO (DIREITA) -->
+        <div class="hero-side">
+            <img id="gameLogo" src="assets/sprites/ui/Logo2.png" alt="Logo do jogo">
 
-    <div class="hero-text">
+            <button id="playBtn" class="play-btn">Começar</button>
+        </div>
 
-        <h1>HeroClix Online</h1>
-
-        <p>
-            Jogue batalhas estratégicas online inspiradas no sistema HeroClix.
-            Monte seu time, entre no lobby e enfrente outros jogadores em mapas táticos.
-        </p>
-
-        <button class="play-btn">Começar Agora</button>
-
-    </div>
-
-    <div class="hero-image">
-
-        <img src="assets/sprites/ui/hero-banner.png" alt="HeroClix Banner">
-
-    </div>
-
-</section>
+        <!-- VIDEO (ESQUERDA) -->
+        <div class="hero-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/H7Nf-m6WGl4?si=T85PKCXpDRwwx843"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
 
 
-<!-- FEATURES -->
 
-<section class="features">
+        <!-- NOTÍCIAS (ESQUERDA) -->
+        <div class="hero-news">
 
-    <div class="feature">
+            <h2>📰 Notícias</h2>
 
-        <h3>🎮 Multiplayer Online</h3>
+            <div class="news-item">
+                <h4>Nova atualização!</h4>
+                <p>Novos personagens foram adicionados ao jogo.</p>
+            </div>
 
-        <p>
-            Enfrente jogadores em partidas 1v1 ou mapas para até 4 jogadores.
-        </p>
+            <div class="news-item">
+                <h4>Servidor Online</h4>
+                <p>Os servidores já estão funcionando normalmente.</p>
+            </div>
 
-    </div>
+            <div class="news-item">
+                <h4>Evento em breve</h4>
+                <p>Prepare-se para o torneio ArenaClix!</p>
+            </div>
 
-    <div class="feature">
+        </div>
 
-        <h3>🧠 Estratégia Tática</h3>
+    </section>
 
-        <p>
-            Use o terreno, poderes e posicionamento para vencer as batalhas.
-        </p>
+    <!----- SOBRE O JOGO ----->
+    <section class="about-game">
 
-    </div>
-
-    <div class="feature">
-
-        <h3>⚡ Personagens com DIAL</h3>
+        <h2> O Multiverso na Palma da Sua Mão!</h2>
 
         <p>
-            Cada personagem possui um sistema de atributos dinâmico baseado em dano.
+
+            Você já imaginou o Batman formando uma aliança com o Homem-Aranha para deter o Thanos? Em HeroClix, isso não
+            é apenas possível, é o que você pode fazer com varios tipos de personagens!
+            HeroClix é muito mais que um jogo de miniaturas; é um portal para as maiores batalhas da cultura pop. Com o
+            exclusivo sistema de Combat Dial, mapas que usam grid, cada peça ganha vida em um tabuleiro estratégico onde
+            cada clique na base conta uma nova história de superação ou derrota.
         </p>
 
-    </div>
+        <p>
+            Utilize posicionamento, poderes especiais e leitura de jogo para vencer seus oponentes
+            em partidas intensas e cheias de estratégia.
+        </p>
 
-</section>
+        <p>
+            Monte seu time, evolua sua forma de jogar e domine a arena!
+        </p>
 
+    </section>
 
-<!-- LOGIN MODAL -->
+    <!-----LISTA DE COMENTARIOS----->
 
-<div class="modal" id="loginModal">
+    <section class="comments-display">
 
-    <div class="modal-content">
+        <h2>💬 Últimos Comentários</h2>
 
-        <h2>Login</h2>
+        <div id="commentsList"></div>
 
-        <input type="text" placeholder="Usuário">
+    </section>
 
-        <input type="password" placeholder="Senha">
+    <!-- COMENTÁRIOS E CONTATO -->
 
-        <button>Entrar</button>
+    <section class="community">
 
-    </div>
+        <div class="comments">
 
-</div>
+            <h2>💬 Comentários</h2>
 
+            <input type="text" id="nameInput" placeholder="Seu nome">
+            <input type="email" id="emailInput" placeholder="Seu email">
 
-<!-- REGISTER MODAL -->
+            <textarea id="commentInput" placeholder="Deixe seu comentário..."></textarea>
 
-<div class="modal" id="registerModal">
+            <button id="sendComment" class="btn-comment">Enviar</button>
 
-    <div class="modal-content">
+        </div>
 
-        <h2>Criar Conta</h2>
+        <div class="contact">
 
-        <input type="text" placeholder="Usuário">
+            <h2>📞 Contato</h2>
 
-        <input type="email" placeholder="Email">
+            <p>Email: contato@arenaclix.com</p>
+            <p>Discord: ArenaClix#1234</p>
+            <p>Instagram: @arenaclix</p>
 
-        <input type="password" placeholder="Senha">
+        </div>
 
-        <button>Cadastrar</button>
+    </section>
 
-    </div>
-
-</div>
-```
-
-<script src="js/game.js"></script>
+    <script src="js/game.js"></script>
 
 </body>
 
-</html>
-
-    
-</body>
 </html>

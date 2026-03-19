@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Personagens - ArenaClix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/personagens.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR (copia igual do index) -->
+    <header class="navbar">
+
+        <div class="logo">
+            <img src="../assets/sprites/ui/logo.png" alt="HeroClix Logo">
+        </div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="/client/pages/como-jogar.html">Como Jogar</a>
+            <a href="/client/pages/personagens.html">Personagens</a>
+            <a href="#">Contatos</a>
+        </nav>
+
+     <div class="login-area">
+
+    <input type="text" id="usernameInput" placeholder="Usuário">
+    <input type="password" id="passwordInput" placeholder="Senha">
+
+    <!----- NOME DO USUÁRIO ----->
+    <span id="userDisplay" style="display: none;"></span>
+
+    <button id="loginBtn" class="btn-outline">Entrar</button>
+    <button id="registerBtn" class="btn-outline">Cadastrar</button>
+
+</div>
+
+    </header>
+    <section class="characters-controls">
+
+        <span>Exibir:</span>
+
+        <select id="itemsPerPage">
+
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+
+        </select>
+
+    </section>
+
+    <!-- TÍTULO -->
+    <section class="characters-header">
+        <h1>Personagens</h1>
+
+        <button id="loadMoreBtn">Mostrar mais</button>
+    </section>
+
+    <!-- GRID DE PERSONAGENS -->
+    <section class="characters-container">
+
+        <!-- GRID -->
+        <div class="characters-grid" id="charactersGrid">
+
+            <div class="character-card common" data-value="100">
+                <h3>Batman</h3>
+                <span>DC - Base Set</span>
+                <img src="../assets/sprites/characters/batman.png">
+            </div>
+
+        </div>
+        <!-- SIDEBAR -->
+        <aside class="characters-filter">
+
+            <h3>Buscar</h3>
+            <input type="text" id="searchName" placeholder="Nome">
+
+            <h3>Raridade</h3>
+            <select id="filterRarity">
+                <option value="">Todas</option>
+                <option value="common">Comum</option>
+                <option value="rare">Raro</option>
+                <option value="epic">Épico</option>
+                <option value="legendary">Lendário</option>
+            </select>
+
+            <h3>Valor</h3>
+            <input type="number" id="minValue" placeholder="Mín">
+
+
+            <button id="applyFilters">Filtrar</button>
+
+        </aside>
+
+    </section>
+
+    <!-- MODAL IMAGEM -->
+    <div id="imageModal" class="image-modal">
+        <img id="modalImg">
+    </div>
+    <script src="../js/pages/personagens.js"></script>
+    <script src="../js/components/components.js"></script>
+    <script src="../js/game.js"></script>
+
+</body>
+
+</html>

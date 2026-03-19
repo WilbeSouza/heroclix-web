@@ -1,0 +1,26 @@
+/* ----- COMO JOGAR ----- */
+
+.rules-container {
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.rules-container h1 {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-title);
+}
+
+.pdf-viewer {
+    display: flex;
+    justify-content: center;
+}
+
+.pdf-viewer iframe {
+    width: 70%;
+    height: 700px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+
+    background: #000;
+}
