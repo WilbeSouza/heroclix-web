@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Loja - ArenaClix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/loja.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR (copia igual do index) -->
+    <header class="navbar">
+
+        <div class="logo">
+            <img src="../assets/sprites/ui/logo.png" alt="HeroClix Logo">
+        </div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="/client/pages/como-jogar.html">Como Jogar</a>
+            <a href="/client/pages/loja.html">Loja</a>
+            <a href="pages/inventario.html" id="inventoryLink" style="display: none;">
+                Inventário
+            </a>
+            <a href="#">Contatos</a>
+        </nav>
+
+        <div class="login-area">
+
+            <input type="text" id="usernameInput" placeholder="Usuário">
+            <input type="password" id="passwordInput" placeholder="Senha">
+
+            <!----- NOME DO USUÁRIO ----->
+            <span id="userDisplay" style="display: none;"></span>
+
+            <button id="loginBtn" class="btn-outline">Entrar</button>
+            <button id="registerBtn" class="btn-outline">Cadastrar</button>
+
+        </div>
+
+    </header>
+    <section class="characters-header">
+        <h1>PERSONAGENS</h1>
+    </section>
+    <section class="characters-controls">
+
+        <div class="top-controls">
+
+            <!-- ESQUERDA -->
+            <div class="raridades-bar">
+
+                <strong>RARIDADES</strong>
+
+                <button value="all" class="active">Todos</button>
+                <button value="common">Comum</button>
+                <button value="uncommon">Incomum</button>
+                <button value="rare">Raro</button>
+                <button value="super">Super raro</button>
+                <button value="chase">Chase</button>
+                <button value="ultra">Ultra chase</button>
+
+            </div>
+
+            <!-- DIREITA -->
+            <div class="sort-box">
+                <span>Organização</span>
+
+                <select id="sortOrder">
+                    <option value="default">Normal</option>
+                    <option value="az">A → Z</option>
+                    <option value="za">Z → A</option>
+                    <option value="low">Menor preço</option>
+                    <option value="high">Maior preço</option>
+                </select>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TÍTULO -->
+
+
+    <!-- GRID DE PERSONAGENS -->
+    <section class="characters-container">
+
+        <!-- SIDEBAR -->
+        <aside class="characters-filter">
+
+            <h3>BUSCAR</h3>
+            <input type="text" id="searchName" placeholder="Nome">
+
+            <h3>Raridade</h3>
+            <select id="filterRarity">
+                <option value="all">Todas</option>
+                <option value="common">Comum</option>
+                <option value="uncommon">Incomum</option>
+                <option value="rare">Raro</option>
+                <option value="super">Super Raro</option>
+                <option value="chase">Chase</option>
+                <option value="ultra">Ultra Chase</option>
+            </select>
+            <h3>Edição</h3>
+            <select id="filterEdition">
+                <option value="">Todas</option>
+                <option value="marvel-starter-2025">Marvel Starter 2025</option>
+                <option value="avengers">Avengers</option>
+                <option value="dc">DC</option>
+                <option value="xmen">X-Men</option>
+                <option value="Halo">Halo</option>
+            </select>
+
+            <h3>Time</h3>
+            <select id="filterTeam">
+                <option value="">Todos</option>
+                <option value="avenger">Avenger</option>
+                <option value="justice-league">Liga da Justiça</option>
+            </select>
+
+            <h3>Pontos</h3>
+            <input type="number" id="point" placeholder="valor">
+
+            <h3>DialCoin</h3>
+            <input type="number" id="dialcoin" placeholder="Valor">
+
+            <button id="clearFilters" class="btn-outline">Limpar</button>
+
+        </aside>
+
+        <!-----IMAGENS DOS PERSONAGENS----->
+        <div id="charactersGrid" class="characters-content characters-grid"></div>
+
+    </section>
+
+    <!-----botoes VOLTAR & PROXIMO----->
+    <div class="pagination">
+        <button id="prevBtn">← Voltar</button>
+        <button id="nextBtn">Próximo →</button>
+    </div>
+
+    <!-- MODAL IMAGEM -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-card" id="modalCard">
+
+            <img id="modalFront">
+            <img id="modalBack">
+
+            <!-----DIAL DE PODERES----->
+            <div id="dialOverlay">
+
+                <!-- clicks do dial -->
+                <div class="dial-row row-number-dial"></div>
+
+                <!-- MOVIMENTO -->
+                <div class="dial-row row-move"></div>
+
+                <!-- ATAQUE -->
+                <div class="dial-row row-attack"></div>
+
+                <!-- DEFESA -->
+                <div class="dial-row row-defense"></div>
+
+                <!-- DANO -->
+                <div class="dial-row row-damage"></div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script src="../js/loja.js"></script>
+    <script src="../js/components/components.js"></script>
+    <script src="../js/game.js"></script>
+
+</body>
+
+</html>

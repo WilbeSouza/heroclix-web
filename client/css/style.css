@@ -73,11 +73,11 @@ body {
     background: var(--color-bg-dark);
     border-bottom: 1px solid var(--color-border);
 
-    position: relative; /* IMPORTANTE */
+    position: relative;
 }
 .navbar nav {
     position: absolute;
-    left: 50vw; /* usa viewport real */
+    left: 50vw; 
     transform: translateX(-50%);
 
     display: flex;
@@ -236,12 +236,12 @@ button {
 }
 
 .news-item h4 {
-    font-size: 14px;
+    font-size: var(--font-size-small);
     margin-bottom: 5px;
 }
 
 .news-item p {
-    font-size: 13px;
+    font-size: var(--font-size-small);
     color: var(--color-text-soft);
 }
 
@@ -352,11 +352,11 @@ button {
 
 .comment-card h4 {
     color: var(--color-primary);
-    font-size: 14px;
+    font-size: var(--font-size-small);
 }
 
 .comment-card p {
-    font-size: 13px;
+    font-size: var(--font-size-small);
     color: var(--color-text-soft);
 }
 /* -----COMENTÁRIOS----- */

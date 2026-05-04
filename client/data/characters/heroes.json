@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Hulk",
+    "edition": "marvel-starter-2025",
+    "team": "avenger",
+    "rarity": "chase",
+    "price": 50,
+    "image": "../assets/sprites/ui/Marvel/003a-Hulk.png"
+  },
+  {
+    "name": "Thor",
+    "rarity": "chase",
+    "price": 75,
+    "image": "../assets/sprites/ui/Marvel/004b-Thor.png"
+  },
+  {
+    "name": "Black Widow",
+    "rarity": "common",
+    "price": 25,
+    "image": "../assets/sprites/ui/Marvel/005-Black-Widow.png"
+  },
+{
+    "name": "Black Widow",
+    "rarity": "common",
+    "price": 50,
+    "image": "../assets/sprites/ui/Marvel/007-Black-Widow.png"
+  }
+  ,
+{
+    "name": "Iron Man",
+    "rarity": "common",
+    "price": 60,
+    "image": "../assets/sprites/ui/Marvel/010-Iron-Man.png"
+  }
+  ,
+{
+    "name": "Captain America",
+    "rarity": "rare",
+    "price": 50,
+    "image": "../assets/sprites/ui/Marvel/030-Captain America.png"
+  }
+  ,
+{
+    "name": "Hawkeye",
+    "rarity": "super",
+    "price": 100,
+    "image": "../assets/sprites/ui/Marvel/kq-002-Hawkeye-01.png",
+    "backImage": "../assets/sprites/ui/Marvel/kq-002-Hawkeye-02.png"
+}
+  ,
+{
+    "name": "Aquaman",
+    "rarity": "common",
+    "price": 68,
+    "image": "../assets/sprites/ui/DC/002-Aquaman.png"
+  }
+  ,
+{
+    "name": "Batman",
+    "rarity": "super",
+    "price": 50,
+    "image": "../assets/sprites/ui/DC/002a-Batman.png"
+  }
+  ,
+{
+    "name": "Wonder Woman",
+    "rarity": "super",
+    "price": 50,
+    "image": "../assets/sprites/ui/DC/003a-Wonder-Woman.png"
+  }
+  ,
+{
+    "name": "Super Man",
+    "rarity": "common",
+    "price": 85,
+    "image": "../assets/sprites/ui/DC/015-Super-Man.png"
+  }
+  ,
+{
+    "name": "Martian Manhunter",
+    "rarity": "rare",
+    "price": 170,
+    "image": "../assets/sprites/ui/DC/019-Martian-Manhunter.png"
+  }
+  ,
+{
+    "name": "Aquaman",
+    "rarity": "uncommon",
+    "price": 60,
+    "image": "../assets/sprites/ui/DC/029-Aquaman.png"
+  }
+  ,
+  {
+  "name": "Peggy Carter",
+  "rarity": "ultra",
+  "price": 75,
+  "image": "../assets/sprites/ui/Marvel/075-Peggy-Carter-01.png",
+  "backImage": "../assets/sprites/ui/Marvel/075-Peggy-Carter-02.png"
+}
+  ,
+{
+    "name": "The Joker",
+    "rarity": "uncommon",
+    "price": 50,
+    "image": "../assets/sprites/ui/DC/030.1-The-Joker.png"
+  }
+   ,
+{
+    "name": "The Flash",
+    "rarity": "rare",
+    "price": 70,
+    "image": "../assets/sprites/ui/DC/041a-The-Flash.png"
+  }
+]

@@ -1,19 +1,48 @@
-/* ================================
-HEROCLIX WEB - GAME.JS
-Controle inicial da interface
-================================ */
+/*-----controle de acessoa a pagina inventario-----*/
+const inventoryLink = document.getElementById("inventoryLink");
 
-/* ELEMENTOS */
+/*logado */
+inventoryLink.style.display = "block";
+localStorage.setItem("isLogged", "true");
+localStorage.setItem("username", username);
+
+/*Deslogado*/
+inventoryLink.style.display = "block";
+localStorage.removeItem("isLogged");
+localStorage.removeItem("username");
+
+/*-----quando carregar a pagina-----*/
+window.addEventListener("load", () => {
+
+    const savedUser = localStorage.getItem("username");
+
+    if (savedUser) {
+
+        isLogged = true;
+
+        userDisplay.innerText = `Olá, ${savedUser}`;
+
+        usernameInput.style.display = "none";
+        passwordInput.style.display = "none";
+
+        userDisplay.style.display = "block";
+
+        loginBtn.innerText = "Sair";
+        registerBtn.style.display = "none";
+
+        inventoryLink.style.display = "block";
+    }
+
+});
+
+/*-----Controle inicial da interface-----*/
+/*-----ELEMENTOS-----*/
 
 const loginBtn = document.getElementById("loginBtn");
 const registerBtn = document.getElementById("registerBtn");
+const inventoryLink = document.getElementById("inventoryLink");
 
-const loginModal = document.getElementById("loginModal");
-const registerModal = document.getElementById("registerModal");
-
-/* ================================
-ABRIR MODAL LOGIN
-================================ */
+/*-----ABRIR MODAL LOGIN-----*/
 
 const usernameInput = document.getElementById("usernameInput");
 const passwordInput = document.getElementById("passwordInput");
@@ -72,9 +101,7 @@ loginBtn.addEventListener("click", () => {
 
 });
 
-/* ================================
-ABRIR MODAL CADASTRO
-================================ */
+/*-----ABRIR MODAL CADASTRO-----*/
 
 registerBtn.addEventListener("click", () => {
 
@@ -84,9 +111,7 @@ registerModal.style.display = "flex";
 
 });
 
-/* ================================
-FECHAR MODAL CLICANDO FORA
-================================ */
+/*-----FECHAR MODAL CLICANDO FORA-----*/
 
 window.addEventListener("click", (event) => {
 
@@ -106,9 +131,7 @@ if(event.target === registerModal){
 
 });
 
-/* ================================
-FUTURO: SISTEMA DE LOGIN
-================================ */
+/*-----FUTURO: SISTEMA DE LOGIN-----*/
 
 function loginUser(){
 
@@ -118,9 +141,7 @@ console.log("Login iniciado");
 
 }
 
-/* ================================
-FUTURO: SISTEMA DE CADASTRO
-================================ */
+/*-----FUTURO: SISTEMA DE CADASTRO-----*/
 
 function registerUser(){
 

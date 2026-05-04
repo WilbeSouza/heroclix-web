@@ -1,0 +1,524 @@
+.characters-controls {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-xl);
+
+    background: #111827;
+    /* cor diferente do header */
+    border-bottom: 1px solid var(--color-border);
+
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.characters-controls select {
+    padding: 5px 10px;
+    border-radius: var(--radius-small);
+    border: 1px solid var(--color-border);
+
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: var(--font-size-small);
+}
+
+.characters-filter input,
+.characters-filter select {
+    font-size: var(--font-size-small);
+}
+
+.characters-header {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*-----Gride de imagem-----*/
+.characters-container {
+    display: flex;
+    gap: 30px;
+    padding: 30px 60px;
+    /* mais largura lateral */
+    padding-bottom: 80px;
+}
+
+/* SIDEBAR ESQUERDA */
+.characters-filter {
+    width: 260px;
+    min-width: 260px;
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.characters-header h1 {
+    font-size: var(--font-size-hero);
+}
+
+.characters-filter h3 {
+    font-size: var(--font-size-medium);
+    font-weight: 600;
+    color: var(--color-text);
+    align-self: center;
+    margin-bottom: 5px;
+}
+
+.btn-outline {
+    padding: 6px 12px;
+    border-radius: 6px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: var(--font-size-small);
+
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+}
+
+#applyFilters {
+    width: auto;
+    /* impede de ocupar 100% */
+    align-self: center;
+    /* alinha à esquerda */
+    font-size: var(--font-size-small);
+}
+
+/* CONTEÚDO DIREITA */
+.characters-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CATEGORIAS (botões tipo Kabum) */
+.characters-categories {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.characters-categories button {
+    padding: 6px 14px;
+    border: 1px solid rgb(255, 255, 255);
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.characters-categories button:hover,
+.characters-categories .active {
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+/* GRID */
+.characters-grid {
+    margin-top: 20px;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    min-height: 750px;
+    /* fixa visual sem quebrar */
+}
+
+/* CARD */
+.character-card img {
+    width: auto;
+
+    max-height: 350px;
+    object-fit: contain;
+
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.character-card img:hover {
+    transform: scale(1.03);
+}
+
+.character-card {
+    display: inline-flex;
+    /* ESSENCIAL */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    /* remove fundo */
+    padding: 0px;
+    /* remove espaço artificial */
+    border: none;
+    /* garante sem borda */
+    text-align: center;
+    transition: 0.4s;
+}
+
+.character-card h3 {
+    font-size: var(--font-size-normal);
+}
+
+.character-card .rarity {
+    font-size: var(--font-size-small);
+}
+
+.character-card .price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    font-size: var(--font-size-small);
+    color: var(--color-text-soft);
+}
+
+/*-----Zoom na imagem ao clicar-----*/
+.image-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.9);
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+}
+
+.image-modal img {
+    width: 600px;
+    height: auto;
+}
+
+/*-----topo-----*/
+.top-controls {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.sort-box {
+    margin-left: auto;
+    /* 🔥 empurra pra direita */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.raridades-bar {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.raridades-bar strong {
+    font-size: var(--font-size-medium);
+}
+
+.raridades-bar button {
+    padding: 6px 12px;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: var(--font-size-small);
+}
+
+.raridades-bar button:hover {
+    background: #cfcfcf;
+}
+
+/* Todos */
+.raridades-bar button:nth-child(2):hover {
+    box-shadow: 0 0 15px white;
+    background: white;
+    color: black
+}
+
+
+/* Comum */
+.raridades-bar button:nth-child(3):hover {
+    box-shadow: 0 0 15px white;
+    color: black;
+    background: rgb(255, 255, 255);
+}
+
+
+/* Incomum */
+.raridades-bar button:nth-child(4):hover {
+    box-shadow: 0 0 15px rgb(146, 250, 61);
+    background: rgb(146, 250, 61);
+    color: black
+}
+
+
+/* Raro */
+.raridades-bar button:nth-child(5):hover {
+    box-shadow: 0 0 15px gray;
+    background: rgb(155, 155, 155);
+    color: white
+}
+
+
+/* Super raro*/
+.raridades-bar button:nth-child(6):hover {
+    box-shadow: 0 0 15px rgb(241, 217, 80);
+    background: rgb(241, 217, 80);
+    color: black
+}
+
+/* Chase */
+.raridades-bar button:nth-child(7):hover {
+    box-shadow: 0 0 15px orange;
+    background: rgb(255, 145, 0);
+    color: white
+}
+
+/* Ultra chase */
+.raridades-bar button:nth-child(8):hover {
+    box-shadow: 0 0 15px #62c5ec;
+    background: rgb(98, 197, 236);
+    color: white
+}
+
+
+/*--------BOTÃO COMPRAR ---------*/
+
+.buy-btn {
+    margin-top: 12px;
+    padding: 10px;
+
+    width: 20%;
+    border: none;
+    border-radius: 8px;
+
+    background: linear-gradient(135deg, #62c5ec, #4fc0ec);
+
+    font-weight: bold;
+    font-size: 14px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+    box-shadow: 0 0 5px #01a1fd;
+}
+
+/*-----Sombra por raridade do personagem-----*/
+.character-card.common img {
+    filter: drop-shadow(0 0 12px white);
+}
+
+.character-card.uncommon img {
+    filter: drop-shadow(0 0 12px rgb(146, 250, 61));
+}
+
+.character-card.rare img {
+    filter: drop-shadow(0 0 12px gray);
+}
+
+.character-card.super img {
+    filter: drop-shadow(0 0 12px rgb(241, 217, 80));
+}
+
+.character-card.chase img {
+    filter: drop-shadow(0 0 12px rgb(255, 145, 0));
+}
+
+.character-card.ultra img {
+    filter: drop-shadow(0 0 12px rgb(98, 197, 236));
+}
+
+/*-----botao: proxima, voltar-----*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    /* 👈 espaço embaixo */
+}
+
+.pagination button {
+    padding: 8px 16px;
+    border-radius: 6px;
+
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-primary);
+
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: var(--font-size-small);
+
+}
+
+.pagination button:hover {
+    background: var(--color-primary);
+}
+
+/*-----ICONES DIALCOIN-----*/
+.coin-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+
+    margin-right: 6px;
+    vertical-align: middle;
+
+    pointer-events: none;
+    /* 🔥 ESSENCIAL */
+    user-select: none;
+}
+
+/*-----Card de personagem frente e verso-----*/
+.modal-card {
+    position: relative;
+
+    width: 600px;
+    height: 800px; /* 🔥 altura fixa também */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+/* imagem ativa */
+.modal-card img.active {
+    opacity: 1;
+}
+/*----sistema para poderes em cards----*/
+#dialOverlay {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+}
+
+/* cada quadrado invisível */
+.dial-zone {
+    position: absolute;
+
+    width: 5%;   /* 🔥 proporcional */
+    height: 5%;
+
+    left: 40%;   /* 🔥 proporcional */
+    top: 70%;
+
+    pointer-events: auto;
+
+    background: rgba(255, 0, 0, 0);
+    border: 1px solid red;
+}
+
+/*-----dial de poderes-----*/
+.dial-row {
+    position: absolute;
+    width: 96%;
+    height: 5%;
+    left: 2%;
+
+    background: rgba(0, 255, 0, 0.2);
+    border: 1px solid lime;
+}
+
+/* clicks do dial */
+.row-number-dial {
+    top: 73.5%;
+}
+
+/* MOVIMENTO */
+.row-move {
+    top: 78%;
+}
+
+/* ATAQUE */
+.row-attack {
+    top: 82.5%;
+}
+
+/* DEFESA */
+.row-defense {
+    top: 87%;
+}
+
+/* DANO */
+.row-damage {
+    top: 91.5%;
+}
+/*quadrados do dial*/
+.dial-row {
+    position: absolute;
+    width: 90%;
+    height: 4.5%;
+    left: 5%;
+}
+
+.dial-cell {
+    position: absolute;
+    width: 6%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+/* tooltip */
+.dial-zone::after {
+    content: attr(data-power);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: black;
+    color: white;
+    padding: 6px;
+    font-size: 12px;
+    border-radius: 6px;
+
+    white-space: nowrap;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.dial-zone:hover::after {
+    opacity: 1;
+}

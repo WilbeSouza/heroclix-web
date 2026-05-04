@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Loja - ArenaClix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
+</head>
+
+<body>
+    <!-- NAVBAR (copia igual do index) -->
+    <header class="navbar">
+
+        <div class="logo">
+            <img src="../assets/sprites/ui/logo.png" alt="HeroClix Logo">
+        </div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="/client/pages/como-jogar.html">Como Jogar</a>
+            <a href="/client/pages/loja.html">Loja</a>
+            <a href="pages/inventario.html" id="inventoryLink" style="display: none;">
+                Inventário
+            </a>
+            <a href="#">Contatos</a>
+        </nav>
+
+        <div class="login-area">
+
+            <input type="text" id="usernameInput" placeholder="Usuário">
+            <input type="password" id="passwordInput" placeholder="Senha">
+
+            <!----- NOME DO USUÁRIO ----->
+            <span id="userDisplay" style="display: none;"></span>
+
+            <button id="loginBtn" class="btn-outline">Entrar</button>
+            <button id="registerBtn" class="btn-outline">Cadastrar</button>
+
+        </div>
+
+    </header>
+
+    <div class="preview-area">
+        <img id="previewImage">
+    </div>
+
+    <div class="cadastro-container">
+
+        <div class="top-info">
+            <div>
+                <label>NOME:</label>
+                <input id="name">
+            </div>
+
+            <div>
+                <label>TIME:</label>
+                <input id="team">
+            </div>
+
+            <div>
+                <label>NUMERO:</label>
+                <input id="number">
+            </div>
+
+            <div>
+                <label>PONTOS:</label>
+                <input id="points">
+            </div>
+        </div>
+
+        <input type="file" id="imageInput">
+
+        <!-- ESCOLHER CLIQUES -->
+        <div class="clicks-selector" id="clicksSelector"></div>
+
+        <!-- HABILIDADES DE MOVIMENTO, ATAQUE, DEFENSA, DANO -->
+
+
+        <div id="iconPanel" class="editor hidden">
+
+            <h3>Opções</h3>
+
+            <div id="iconOptions"></div>
+
+            <button id="saveIcon">Salvar</button>
+
+        </div>
+
+        <div class="dial-row">
+            <span>🎯</span>
+            <div id="targetContainer" class="dial"></div>
+        </div>
+        <!-- DIAL -->
+        <div class="dial-area">
+
+
+
+            <div class="dial-row">
+                <span>🏃</span>
+                <div id="moveContainer" class="dial"></div>
+            </div>
+
+
+            <div class="dial-row">
+                <span>⚔️</span>
+                <div id="attackContainer" class="dial"></div>
+            </div>
+
+            <div class="dial-row">
+                <span>🛡️</span>
+                <div id="defenseContainer" class="dial"></div>
+            </div>
+
+            <div class="dial-row">
+                <span>💥</span>
+                <div id="damageContainer" class="dial"></div>
+            </div>
+
+        </div>
+
+        <button id="addCharacter">ADICIONAR PERSONAGEM</button>
+
+    </div>
+    <div id="editorPanel" class="editor hidden">
+
+        <h3>Editar Quadrado</h3>
+
+        <label>Valor:</label>
+        <input id="cellValue" type="number">
+
+        <label>Poder:</label>
+        <div id="powerOptions"></div>
+
+        <div id="specialPowerContainer" class="hidden">
+            <label>Poder Especial:</label>
+            <input id="specialPowerInput" type="text" placeholder="Descreva o poder...">
+        </div>
+
+        <button id="saveCell">Salvar</button>
+
+    </div>
+
+    <script src="../js/cadastro.js"></script>
+    <script src="../js/components/components.js"></script>
+    <script src="../js/game.js"></script>
+</body>
+
+</html>
